@@ -80,7 +80,31 @@ var Engine = (function(global) {
      */
     function update(dt) {
         updateEntities(dt);
-        // checkCollisions();
+        checkCollisions();
+
+        // Destroys enemies objects after disappearing
+        for (var i = 0; i < allEnemies.length; i++) {
+            if (allEnemies[i].x > 5) {
+                allEnemies.splice(i, 1);
+            }
+        }
+
+        // Randomly adds new enemies to the Array.
+        if (Math.floor(Math.random() * 1000) < 15) {
+            var newEnemy = new Enemy();
+            allEnemies.push(newEnemy);
+            console.log(allEnemies);
+        }
+    }
+
+    // Checks for collisions. If a collision is detected, the player goes to the initial position.
+    function checkCollisions() {
+        allEnemies.forEach(function(enemy) {
+            if (((enemy.x - player.x < 0.5) && (enemy.x - player.x > 0)) && (enemy.y == player.y)) {
+                console.log("colision");
+                player.reset();
+            }
+        })
     }
 
     /* This is called by the update function and loops through all of the
