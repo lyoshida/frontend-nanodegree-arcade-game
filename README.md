@@ -1,6 +1,9 @@
 # frontend-nanodegree-arcade-game
 ===============================
 
+This project is part of the [Front-end Web Developer Nanodegree](https://www.udacity.com/course/front-end-web-developer-nanodegree--nd001).
+
+
 ## Running the game
 
 Open the file index.html on any browser.
