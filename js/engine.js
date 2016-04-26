@@ -100,7 +100,9 @@ var Engine = (function(global) {
     // Checks for collisions. If a collision is detected, the player goes to the initial position.
     function checkCollisions() {
         allEnemies.forEach(function(enemy) {
-            if (((enemy.x - player.x < 0.5) && (enemy.x - player.x > 0)) && (enemy.y == player.y)) {
+            console.log(enemy.x)
+            console.log(player.x)
+            if (((player.x - enemy.x < 0.7 ) && (enemy.x - player.x < 0.7)) && (enemy.y == player.y)) {
                 console.log("colision");
                 player.reset();
             }
