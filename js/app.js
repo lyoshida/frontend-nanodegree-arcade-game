@@ -1,3 +1,5 @@
+'use strict';
+
 // Enemies our player must avoid
 var Enemy = function() {
     // Variables applied to each of our instances go here,
@@ -68,19 +70,19 @@ Player.prototype.render = function() {
 
 Player.prototype.handleInput = function(direction) {
 
-    if (direction == 'up' &&  this.y >= 0) {
+    if (direction === 'up' &&  this.y >= 0) {
         this.y -= 1;
     }
 
-    if (direction == 'down' && this.y < 4) {
+    if (direction === 'down' && this.y < 4) {
         this.y += 1;
     }
 
-    if (direction == 'left' && this.x > 0) {
+    if (direction === 'left' && this.x > 0) {
         this.x -= 1;
     }
 
-    if (direction == 'right' && this.x < 4) {
+    if (direction === 'right' && this.x < 4) {
         this.x += 1;
     }
 
